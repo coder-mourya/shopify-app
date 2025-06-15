@@ -1,0 +1,249 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Shop bolt",
+    "description": "Automatically generated Swagger documentation",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "User",
+      "description": "User-related endpoints"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "BearerAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization",
+      "description": "Enter your token as 'Bearer <TOKEN>'"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/badge/create-badge": {
+      "post": {
+        "tags": [
+          "Badge"
+        ],
+        "description": "Create badge",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create badge data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/createBadgeSchema"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Badge created successfully",
+            "schema": {
+              "$ref": "#/definitions/createBadgeSchema"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/badge/get-all-badges": {
+      "get": {
+        "tags": [
+          "Badge"
+        ],
+        "description": "Get all badges",
+        "responses": {
+          "200": {
+            "description": "Badges fetched successfully"
+          }
+        }
+      }
+    },
+    "/badge/update-badge/{id}": {
+      "patch": {
+        "tags": [
+          "Badge"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update badge data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/updateBadgeSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Badge updated successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/badge/update-badge-status/{id}": {
+      "patch": {
+        "tags": [
+          "Badge"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update badge status",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/updateBadgeStatusSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Badge status updated successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/badge/delete-badge/{id}": {
+      "delete": {
+        "tags": [
+          "Badge"
+        ],
+        "description": "Delete badge",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Badge deleted successfully"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "createBadgeSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Badge 1"
+        },
+        "text": {
+          "type": "string",
+          "example": "Badge 1"
+        },
+        "color": {
+          "type": "string",
+          "example": "red"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "example": "white"
+        },
+        "position": {
+          "type": "string",
+          "example": "top-left"
+        },
+        "products": {
+          "type": "array",
+          "example": [
+            "string"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updateBadgeSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Badge 1"
+        },
+        "text": {
+          "type": "string",
+          "example": "Badge 1"
+        },
+        "color": {
+          "type": "string",
+          "example": "red"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "example": "white"
+        },
+        "position": {
+          "type": "string",
+          "example": "top-left"
+        },
+        "products": {
+          "type": "array",
+          "example": [
+            "string"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updateBadgeStatusSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ]
+}

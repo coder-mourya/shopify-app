@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// User management
+model User {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  shop        String   @unique // store.myshopify.com
+  accessToken String // OAuth token
+  email       String?
+  plan        String   @default("free") // free / pro / advanced
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// badges 
+model Badges {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  text            String
+  color           String
+  backgroundColor String
+  position        String
+  enabled         Boolean  @default(true)
+  products        String[]
+}
+
+// banner 
+
+model Banner {
+  id              String  @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  text            String
+  backgroundColor String
+  textColor       String
+  position        String
+  enabled         Boolean
+  link            String
+  fontSize        Float
+  fontWeight      String
+  padding         Float
+  animation       String
+}
