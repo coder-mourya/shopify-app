@@ -13,9 +13,17 @@
     "rootDir": "./src", /* Specify root folder for source files */
     "allowSyntheticDefaultImports": true, /* Allow synthetic default imports */
     "paths": {
-      "*": [
-        "*"
-      ]
+      "dao/*": ["dao/*"],
+      "constants/*": ["constants/*"],
+      "services/*": ["services/*"],
+      "utils/*": ["utils/*"],
+      "types/*": ["types/*"],
+      "config/*": ["config/*"],
+      "controller/*": ["controller/*"],
+      "middlewares/*": ["middlewares/*"],
+      "validations/*": ["validations/*"],
+      "routes/*": ["routes/*"],
+      "swagger.json": ["swagger.json"]
     }
   },
   "include": [

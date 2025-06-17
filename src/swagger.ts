@@ -38,7 +38,19 @@ const doc = {
     // badge
     createBadgeSchema: swaggerSchemas.createBadgeSchema,
     updateBadgeSchema: swaggerSchemas.updateBadgeSchema,
-    updateBadgeStatusSchema: swaggerSchemas.updateBadgeStatusSchema
+    updateBadgeStatusSchema: swaggerSchemas.updateBadgeStatusSchema,
+    // banner 
+    createBannerSchema: swaggerSchemas.createBannerSchema,
+    updateBannerSchema: swaggerSchemas.updateBannerSchema,
+    updateBannerStatusSchema: swaggerSchemas.updateBannerStatusSchema,
+    // cart
+    createCartSchema: swaggerSchemas.createCartSchema,
+    updateCartSchema: swaggerSchemas.updateCartSchema,
+    updateCartStatusSchema: swaggerSchemas.updateCartStatusSchema,
+    // timer 
+    createTimerSchema: swaggerSchemas.createTimerSchema,
+    updateTimerSchema: swaggerSchemas.updateTimerSchema,
+    updateTimerStatusSchema: swaggerSchemas.updateTimerStatusSchema,
 };
 
 

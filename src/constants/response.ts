@@ -68,14 +68,14 @@ export const RESPONSE_MESSAGES = {
             "statusCode": HTTP_STATUS_CODE.BAD_REQUEST,
             "type": "INVALID BODY PARAMETER"
         },
-        
+
     },
     SUCCESS: {
         DEFAULT: {
             "statusCode": HTTP_STATUS_CODE.OK,
             "type": "DEFAULT"
         },
-       
+
         // badge
         BADGE_CREATED: {
             "statusCode": HTTP_STATUS_CODE.CREATED,
@@ -93,10 +93,84 @@ export const RESPONSE_MESSAGES = {
             "statusCode": HTTP_STATUS_CODE.UPDATED,
             "type": "BADGE_STATUS_UPDATED"
         },
-        FETCH_BADGE:(data: any) => {
+        FETCH_BADGE: (data: any) => {
             return {
                 "statusCode": HTTP_STATUS_CODE.OK,
                 "type": "FETCH_BADGE",
+                "data": data
+            };
+        },
+
+        // banner
+        BANNER_CREATED: {
+            "statusCode": HTTP_STATUS_CODE.CREATED,
+            "type": "BANNER_CREATED"
+        },
+        BANNER_UPDATED: {
+            "statusCode": HTTP_STATUS_CODE.UPDATED,
+            "type": "BANNER_UPDATED"
+        },
+        BANNER_DELETED: {
+            "statusCode": HTTP_STATUS_CODE.OK,
+            "type": "BANNER_DELETED"
+        },
+        BANNER_STATUS_UPDATED: {
+            "statusCode": HTTP_STATUS_CODE.UPDATED,
+            "type": "BANNER_STATUS_UPDATED"
+        },
+        FETCH_BANNER: (data: any) => {
+            return {
+                "statusCode": HTTP_STATUS_CODE.OK,
+                "type": "FETCH_BANNER",
+                "data": data
+            };
+        },
+        // cart
+        CART_CREATED: {
+            "statusCode": HTTP_STATUS_CODE.CREATED,
+            "type": "CART_CREATED"
+        },
+        CART_UPDATED: {
+            "statusCode": HTTP_STATUS_CODE.UPDATED,
+            "type": "CART_UPDATED"
+        },
+        CART_DELETED: {
+            "statusCode": HTTP_STATUS_CODE.OK,
+            "type": "CART_DELETED"
+        },
+        CART_STATUS_UPDATED: {
+            "statusCode": HTTP_STATUS_CODE.UPDATED,
+            "type": "CART_STATUS_UPDATED"
+        },
+        FETCH_CART: (data: any) => {
+            return {
+                "statusCode": HTTP_STATUS_CODE.OK,
+                "type": "FETCH_CART",
+                "data": data
+            };
+        },
+
+        // timer 
+        TIMER_CREATED: {
+            "statusCode": HTTP_STATUS_CODE.CREATED,
+            "type": "TIMER_CREATED"
+        },
+        TIMER_UPDATED: {
+            "statusCode": HTTP_STATUS_CODE.UPDATED,
+            "type": "TIMER_UPDATED"
+        },
+        TIMER_DELETED: {
+            "statusCode": HTTP_STATUS_CODE.OK,
+            "type": "TIMER_DELETED"
+        },
+        TIMER_STATUS_UPDATED: {
+            "statusCode": HTTP_STATUS_CODE.UPDATED,
+            "type": "TIMER_STATUS_UPDATED"
+        },
+        FETCH_TIMER: (data: any) => {
+            return {
+                "statusCode": HTTP_STATUS_CODE.OK,
+                "type": "FETCH_TIMER",
                 "data": data
             };
         },

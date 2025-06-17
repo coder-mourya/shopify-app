@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { badgeController } from "../controller/index";
-import { ValidateCreateBadge, ValidateUpdateBadge, ValidateupdateStatus } from "../validations/badgeValidation";
+import { badgeController } from "controller/index";
+import { ValidateCreateBadge, ValidateUpdateBadge, ValidateupdateStatus } from "validations/badgeValidation";
 
 
 

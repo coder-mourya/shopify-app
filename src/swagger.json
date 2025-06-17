@@ -160,6 +160,369 @@
           }
         }
       }
+    },
+    "/banner/create-banner": {
+      "post": {
+        "tags": [
+          "Banner"
+        ],
+        "description": "Create banner",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create banner data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/createBannerSchema"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Banner created successfully",
+            "schema": {
+              "$ref": "#/definitions/createBannerSchema"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/banner/get-all-banners": {
+      "get": {
+        "tags": [
+          "Banner"
+        ],
+        "description": "Get all banners",
+        "responses": {
+          "200": {
+            "description": "Banners fetched successfully"
+          }
+        }
+      }
+    },
+    "/banner/update-banner/{id}": {
+      "patch": {
+        "tags": [
+          "Banner"
+        ],
+        "description": "Update banner",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update banner data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/updateBannerSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Banner updated successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/banner/update-banner-status/{id}": {
+      "patch": {
+        "tags": [
+          "Banner"
+        ],
+        "description": "Update banner status",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update banner status",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/updateBannerStatusSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Banner status updated successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/banner/delete-banner/{id}": {
+      "delete": {
+        "tags": [
+          "Banner"
+        ],
+        "description": "Delete banner",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Banner deleted successfully"
+          }
+        }
+      }
+    },
+    "/cart/create-cart": {
+      "post": {
+        "tags": [
+          "Cart"
+        ],
+        "description": "Create cart",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create cart data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/createCartSchema"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Cart created successfully",
+            "schema": {
+              "$ref": "#/definitions/createCartSchema"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/cart/get-all-carts": {
+      "get": {
+        "tags": [
+          "Cart"
+        ],
+        "description": "Get all carts",
+        "responses": {
+          "200": {
+            "description": "Carts fetched successfully"
+          }
+        }
+      }
+    },
+    "/cart/update-cart-status/{id}": {
+      "patch": {
+        "tags": [
+          "Cart"
+        ],
+        "description": "Update cart status",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update cart status",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/updateCartStatusSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cart status updated successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/cart/update-cart/{id}": {
+      "patch": {
+        "tags": [
+          "Cart"
+        ],
+        "description": "Update cart",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update cart data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/updateCartSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cart updated successfully"
+          }
+        }
+      }
+    },
+    "/timer/create-timer": {
+      "post": {
+        "tags": [
+          "Timer"
+        ],
+        "description": "Create timer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create timer data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/createTimerSchema"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Timer created successfully",
+            "schema": {
+              "$ref": "#/definitions/createTimerSchema"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/timer/get-all-timers": {
+      "get": {
+        "tags": [
+          "Timer"
+        ],
+        "description": "Get all timers",
+        "responses": {
+          "200": {
+            "description": "Timers fetched successfully"
+          }
+        }
+      }
+    },
+    "/timer/update-timer/{id}": {
+      "patch": {
+        "tags": [
+          "Timer"
+        ],
+        "description": "Update timer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update timer data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/updateTimerSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Timer updated successfully"
+          }
+        }
+      }
+    },
+    "/timer/update-timer-status/{id}": {
+      "patch": {
+        "tags": [
+          "Timer"
+        ],
+        "description": "Update timer status",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update timer status",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/updateTimerStatusSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Timer status updated successfully"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/timer/delete-timer/{id}": {
+      "delete": {
+        "tags": [
+          "Timer"
+        ],
+        "description": "Delete timer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Timer deleted successfully"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -232,6 +595,379 @@
       }
     },
     "updateBadgeStatusSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "createBannerSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Banner 1"
+        },
+        "text": {
+          "type": "string",
+          "example": "Banner 1"
+        },
+        "textColor": {
+          "type": "string",
+          "example": "red"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "example": "white"
+        },
+        "position": {
+          "type": "string",
+          "example": "top-left"
+        },
+        "link": {
+          "type": "string",
+          "example": "https://www.example.com"
+        },
+        "fontSize": {
+          "type": "number",
+          "example": 16
+        },
+        "fontWeight": {
+          "type": "string",
+          "example": "bold"
+        },
+        "padding": {
+          "type": "number",
+          "example": 16
+        },
+        "animation": {
+          "type": "string",
+          "example": "fade"
+        }
+      }
+    },
+    "updateBannerSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Banner 1"
+        },
+        "text": {
+          "type": "string",
+          "example": "Banner 1"
+        },
+        "textColor": {
+          "type": "string",
+          "example": "red"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "example": "white"
+        },
+        "position": {
+          "type": "string",
+          "example": "top-left"
+        },
+        "link": {
+          "type": "string",
+          "example": "https://www.example.com"
+        },
+        "fontSize": {
+          "type": "number",
+          "example": 16
+        },
+        "fontWeight": {
+          "type": "string",
+          "example": "bold"
+        },
+        "padding": {
+          "type": "number",
+          "example": 16
+        },
+        "animation": {
+          "type": "string",
+          "example": "fade"
+        }
+      }
+    },
+    "updateBannerStatusSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "createCartSchema": {
+      "type": "object",
+      "properties": {
+        "shop": {
+          "type": "string",
+          "example": "my-shop.myshopify.com"
+        },
+        "stickyCartPosition": {
+          "type": "string",
+          "example": "bottom-right"
+        },
+        "style": {
+          "type": "string",
+          "example": "floating"
+        },
+        "showProductCount": {
+          "type": "boolean",
+          "example": true
+        },
+        "showTotal": {
+          "type": "boolean",
+          "example": true
+        },
+        "backgroundColor": {
+          "type": "string",
+          "example": "#00B167"
+        },
+        "textColor": {
+          "type": "string",
+          "example": "#ffffff"
+        },
+        "borderRadius": {
+          "type": "number",
+          "example": 8
+        },
+        "animation": {
+          "type": "string",
+          "example": "slide"
+        },
+        "drawerPosition": {
+          "type": "string",
+          "example": "right"
+        },
+        "width": {
+          "type": "number",
+          "example": 400
+        },
+        "showRecommendations": {
+          "type": "boolean",
+          "example": true
+        },
+        "showShippingBar": {
+          "type": "boolean",
+          "example": true
+        },
+        "freeShippingThreshold": {
+          "type": "number",
+          "example": 50
+        }
+      }
+    },
+    "updateCartSchema": {
+      "type": "object",
+      "properties": {
+        "stickyCart": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "example": true
+            },
+            "position": {
+              "type": "string",
+              "example": "string"
+            },
+            "style": {
+              "type": "string",
+              "example": "string"
+            },
+            "showProductCount": {
+              "type": "boolean",
+              "example": true
+            },
+            "showTotal": {
+              "type": "boolean",
+              "example": true
+            },
+            "backgroundColor": {
+              "type": "string",
+              "example": "string"
+            },
+            "textColor": {
+              "type": "string",
+              "example": "string"
+            },
+            "borderRadius": {
+              "type": "number",
+              "example": 123
+            },
+            "animation": {
+              "type": "string",
+              "example": "string"
+            }
+          }
+        },
+        "cartDrawer": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "example": true
+            },
+            "position": {
+              "type": "string",
+              "example": "string"
+            },
+            "width": {
+              "type": "number",
+              "example": 123
+            },
+            "showRecommendations": {
+              "type": "boolean",
+              "example": true
+            },
+            "showShippingBar": {
+              "type": "boolean",
+              "example": true
+            },
+            "freeShippingThreshold": {
+              "type": "number",
+              "example": 123
+            }
+          }
+        }
+      }
+    },
+    "updateCartStatusSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean",
+          "example": true
+        },
+        "type": {
+          "type": "string",
+          "example": "stickyCart"
+        }
+      }
+    },
+    "createTimerSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Flash Sale Timer"
+        },
+        "endTime": {
+          "type": "string",
+          "example": "2024-12-31T23:59:59"
+        },
+        "style": {
+          "type": "string",
+          "example": "modern"
+        },
+        "position": {
+          "type": "string",
+          "example": "product-page"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "example": "#ff4d4f"
+        },
+        "textColor": {
+          "type": "string",
+          "example": "#ffffff"
+        },
+        "fontSize": {
+          "type": "number",
+          "example": 18
+        },
+        "showDays": {
+          "type": "boolean",
+          "example": true
+        },
+        "showHours": {
+          "type": "boolean",
+          "example": true
+        },
+        "showMinutes": {
+          "type": "boolean",
+          "example": true
+        },
+        "showSeconds": {
+          "type": "boolean",
+          "example": true
+        },
+        "products": {
+          "type": "array",
+          "example": [
+            "string"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updateTimerSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Flash Sale Timer"
+        },
+        "endTime": {
+          "type": "string",
+          "example": "2024-12-31T23:59:59"
+        },
+        "style": {
+          "type": "string",
+          "example": "modern"
+        },
+        "position": {
+          "type": "string",
+          "example": "product-page"
+        },
+        "backgroundColor": {
+          "type": "string",
+          "example": "#ff4d4f"
+        },
+        "textColor": {
+          "type": "string",
+          "example": "#ffffff"
+        },
+        "fontSize": {
+          "type": "number",
+          "example": 18
+        },
+        "showDays": {
+          "type": "boolean",
+          "example": true
+        },
+        "showHours": {
+          "type": "boolean",
+          "example": true
+        },
+        "showMinutes": {
+          "type": "boolean",
+          "example": true
+        },
+        "showSeconds": {
+          "type": "boolean",
+          "example": true
+        },
+        "products": {
+          "type": "array",
+          "example": [
+            "string"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "updateTimerStatusSchema": {
       "type": "object",
       "properties": {
         "status": {

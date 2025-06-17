@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { RESPONSE_MESSAGES } from "../constants/response";
+import { RESPONSE_MESSAGES } from "constants/response";
 import { BadgeDao } from "dao/badge.dao";
 
 const badgeController = {

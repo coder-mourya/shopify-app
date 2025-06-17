@@ -28,12 +28,13 @@ model Badges {
   position        String
   enabled         Boolean  @default(true)
   products        String[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 // banner 
-
 model Banner {
-  id              String  @id @default(auto()) @map("_id") @db.ObjectId
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
   name            String
   text            String
   backgroundColor String
@@ -45,4 +46,58 @@ model Banner {
   fontWeight      String
   padding         Float
   animation       String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Cart {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  shop String // e.g., shop domain or shop ID from Shopify OAuth
+
+  stickyCart StickyCartConfig
+  cartDrawer CartDrawerConfig
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+type StickyCartConfig {
+  enabled          Boolean @default(false)
+  position         String // e.g., 'bottom-right'
+  style            String // e.g., 'floating'
+  showProductCount Boolean
+  showTotal        Boolean
+  backgroundColor  String
+  textColor        String
+  borderRadius     Float
+  animation        String
+}
+
+type CartDrawerConfig {
+  enabled               Boolean @default(false)
+  position              String // e.g., 'right'
+  width                 Float
+  showRecommendations   Boolean
+  showShippingBar       Boolean
+  freeShippingThreshold Float
+}
+
+// timer 
+model Timer {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  endTime         DateTime
+  style           String
+  position        String
+  backgroundColor String
+  textColor       String
+  fontSize        Float
+  showDays        Boolean
+  showHours       Boolean
+  showMinutes     Boolean
+  showSeconds     Boolean
+  enabled         Boolean  @default(true)
+  products        String[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
