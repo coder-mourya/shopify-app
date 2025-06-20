@@ -49,7 +49,7 @@ const badgeController = {
             await BadgeDao.updateStatus(id, status);
             res.status(202).json(RESPONSE_MESSAGES.SUCCESS.BADGE_STATUS_UPDATED);
         } catch (error) {
-            
+            res.status(500).json(RESPONSE_MESSAGES.ERROR.INTERNAL_SERVER_ERROR);
         }
      },
 };
